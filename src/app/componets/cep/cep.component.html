@@ -1,0 +1,27 @@
+<div class="container mt-3">
+  <form (ngSubmit)="fetchAddress()">
+    <div class="form-group">
+      <label for="cep">CEP</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cep"
+        [(ngModel)]="cep"
+        name="cep"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Buscar Endereço</button>
+  </form>
+  <div *ngIf="address" class="mt-3">
+    <p><strong>Logradouro:</strong> {{ address.logradouro }}</p>
+    <p><strong>Complemento:</strong> {{ address.complemento }}</p>
+    <p><strong>Bairro:</strong> {{ address.bairro }}</p>
+    <p><strong>Localidade:</strong> {{ address.localidade }}</p>
+    <p><strong>UF:</strong> {{ address.uf }}</p>
+    <p><strong>IBGE:</strong> {{ address.ibge }}</p>
+    <p><strong>GIA:</strong> {{ address.gia }}</p>
+    <p><strong>DDD:</strong> {{ address.ddd }}</p>
+    <p><strong>SIAFI:</strong> {{ address.siafi }}</p>
+  </div>
+</div>
